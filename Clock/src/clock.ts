@@ -7,6 +7,13 @@ export default class Clock {
     {
         this.hour = hour;
         this.min = min;
+
+        this.getTime();        
+    }
+
+    getTime()
+    {
+        return this.toString();
     }
 
     plus(min: number) : number
@@ -22,14 +29,33 @@ export default class Clock {
         return min;
     }
 
-    convertToStr(hour: number, min?: number) : string
-    {
-        hour.toString();
-
-        if(min != undefined) min.toString();
-
-        return hour + ':' + min;
+    convertHourToStr() : string
+    {   
+        this.checkHour();
+        if(this.hour < 10) return '0' + this.hour;
+        
+        return this.hour.toString();
     }
 
+    convertMinToStr() : string
+    {
+        if(this.min == undefined) this.min = 0;
+
+        if(this.min != undefined && this.min < 10) return '0' + this.min;
+
+        return '' + this.min;
+    }
+
+    toString() : string
+    {
+        let hour = this.convertHourToStr();
+        let min = this.convertMinToStr();        
+        return `${hour}:${min}`;
+    }
+
+    checkHour()
+    {
+        if(this.hour == 24) this.hour = 0;
+    }
     
 }

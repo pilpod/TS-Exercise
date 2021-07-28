@@ -10,10 +10,10 @@ describe('Clock', () => {
       expect(new Clock(11, 9).toString()).toEqual('11:09')
     })
 
-/*     test('midnight is zero hours', () => {
+    test('midnight is zero hours', () => {
       expect(new Clock(24, 0).toString()).toEqual('00:00')
     })
-
+/*
     test('hour rolls over', () => {
       expect(new Clock(25, 0).toString()).toEqual('01:00')
     })
