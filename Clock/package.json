@@ -4,7 +4,8 @@
   "description": "Implement a clock that handles times without dates.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "cover": "jest --coverage"
   },
   "author": "giacomo",
   "license": "ISC",
